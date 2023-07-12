@@ -7,11 +7,8 @@ class NoteComparator : DiffUtil.ItemCallback<NoteData>(){
     override fun areItemsTheSame(oldItem: NoteData, newItem: NoteData): Boolean {
         return oldItem == newItem
     }
-
     override fun areContentsTheSame(oldItem: NoteData, newItem: NoteData): Boolean {
         return oldItem.noteTitle == newItem.noteTitle
                 && oldItem.noteText == newItem.noteText
     }
-
-
 }

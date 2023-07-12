@@ -12,7 +12,6 @@ class NoteAdapter : ListAdapter<NoteData, NoteViewHolder>(NoteComparator()) {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.note_card, parent, false)
         return NoteViewHolder(itemView)
     }
-
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val currentNote = getItem(position)
         holder.bind(currentNote)

@@ -26,7 +26,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,7 +34,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Redundant
@@ -45,14 +43,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         noteViewModel = ViewModelProvider(this, factory)[NoteViewModel::class.java]
         //Set up RecyclerView
         setUpRecyclerView()
-
         binding.addFab.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_editFragment)
         }
-
-
     }
-
     private fun setUpRecyclerView() {
         noteAdapter = NoteAdapter()
         binding.rvNote.adapter = noteAdapter
@@ -61,12 +55,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun displayNoteList() {
-        noteViewModel.getAllNotes().observe(viewLifecycleOwner, Observer {notes ->
+        noteViewModel.getAllNotes().observe(viewLifecycleOwner) { notes ->
             notes?.let {
                 noteAdapter.submitList(notes)
             }
-//            noteAdapter.notifyDataSetChanged()
-        } )
+        }
     }
 
 }

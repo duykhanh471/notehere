@@ -9,6 +9,7 @@
 
     <style name="note_card">
         <item name="cornerRadius">15dp</item>
+        <item name="colorOnBackground">@color/item_color</item>
     </style>
 
 </resources>
