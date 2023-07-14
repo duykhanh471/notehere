@@ -11,8 +11,15 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
+            android:id="@+id/action_homeFragment_to_deleteFragment"
+            app:destination="@id/deleteFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_editFragment"
             app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateFragment2"
+            app:destination="@id/updateFragment2" />
+
     </fragment>
     <fragment
         android:id="@+id/editFragment"
@@ -23,4 +30,30 @@
             android:id="@+id/action_editFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/updateFragment2"
+        android:name="vn.tofu.notehere.fragments.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="note"
+            app:argType="vn.tofu.notehere.database.NoteData"
+            app:nullable="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/deleteFragment"
+        android:name="vn.tofu.notehere.fragments.DeleteFragment"
+        android:label="fragment_delete"
+        tools:layout="@layout/fragment_delete" >
+        <action
+            android:id="@+id/action_deleteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="note"
+            app:argType="vn.tofu.notehere.database.NoteData"
+            app:nullable="true" />
+    </dialog>
 </navigation>

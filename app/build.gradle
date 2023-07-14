@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+
 }
 
 android {
@@ -40,6 +43,7 @@ dependencies {
     def lifecycle_version = "2.6.1"
     def room_version = "2.5.2"
     def nav_version = "2.6.0"
+
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.2'
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"

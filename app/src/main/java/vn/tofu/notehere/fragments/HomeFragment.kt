@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,9 +21,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var noteRepository: NoteRepository
     private lateinit var binding: FragmentHomeBinding
     private lateinit var noteAdapter: NoteAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,5 +60,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         }
     }
+
+
+
 
 }

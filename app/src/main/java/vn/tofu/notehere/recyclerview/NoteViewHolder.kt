@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import vn.tofu.notehere.R
 import vn.tofu.notehere.database.NoteData
 
-class NoteViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView){
+class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val noteTitle: TextView = itemView.findViewById(R.id.tvTitle)
     private val noteText: TextView = itemView.findViewById(R.id.tvText)
 
@@ -14,4 +14,6 @@ class NoteViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemV
         noteTitle.text = note.noteTitle
         noteText.text = note.noteText
     }
+
+
 }
