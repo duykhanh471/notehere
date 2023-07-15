@@ -37,10 +37,11 @@ class DeleteFragment : DialogFragment(R.layout.fragment_delete) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Windows layout
-        if (dialog != null) dialog!!.window!!.setLayout(
-            400.toPx(requireContext()),
-            200.toPx(requireContext())
-        )
+        if (dialog != null)
+            dialog!!.window!!
+                .setLayout(400.toPx(requireContext()), 200.toPx(requireContext()))
+        dialog!!.window!!.setTitle(getString(R.string.delete_confirm))
+
         //init viewModel
         val noteDao = NoteDatabase.getDatabase(requireContext()).getNoteDao()
         noteRepository = NoteRepository(noteDao)
